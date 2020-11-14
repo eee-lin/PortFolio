@@ -1,16 +1,12 @@
 <template>
-  <kinesis-container>
-    <kinesis-element :strength="20">
-      <img
-        class="circle-root"
-        src="@/assets/export2.svg"
-        alt="circle"
-        :style="{
-          transform: `translate(${x}px, ${y}px) scale(${scaleX}, ${scaleY})`,
-        }"
-      />
-    </kinesis-element>
-  </kinesis-container>
+  <img
+    class="circle-root"
+    src="@/assets/export2.svg"
+    alt="circle"
+    :style="{
+      transform: `translate(${x}px, ${y}px) scale(${scaleX}, ${scaleY})`,
+    }"
+  />
 </template>
 
 <style lang="scss" scoped>

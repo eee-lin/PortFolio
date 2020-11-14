@@ -1,23 +1,13 @@
 <template>
-  <img
-    class="move-root"
-    src="../assets/circle2.svg"
-    alt="円"
-    :style="{
-      transform: `translate(${x}px, ${y}px) scale(${scaleX}, ${scaleY}) rotate(${rotate}deg)`,
-    }"
-  />
+  <!-- <div class="border-radius"></div> -->
+  <!-- <svg viewbox="0 0 300 300" width="300" height="300">
+  <line x1=100 y1=100 x2=200 y2=200 stroke="black"></line>
+  </svg> -->
+  <svg viewbox="0 0 300 300" width="300" height="300">
+    <circle r="50" cx="150" cy="150" :class="{ active: active }"></circle>
+    <!-- @mouseenter="active = !active" -->
+  </svg>
 </template>
-
-<style lang="scss" scoped>
-.move-root {
-  position: absolute; //絶対配置
-  left: 0;
-  top: 0;
-  //transform: translate(100px, 100px); //座標を指定
-  //CSSでアニメーションをするときにはできる限りtransformを使う
-}
-</style>
 
 <script>
 export default {
@@ -27,7 +17,43 @@ export default {
     y: { type: Number, default: 100 },
     scaleX: { type: Number, default: 1.0 },
     scaleY: { type: Number, default: 1.0 },
-    rotate: { type: Number, default: 0 },
+  },
+  data() {
+    return {
+      active: false,
+    }
+  },
+
+  methods: {
+    someMethod() {
+      if (this.active === false) {
+        this.active = true
+      } else {
+        this.active = false
+      }
+    },
+  },
+  mounted: function() {
+    this.updateMessageTimer = setInterval(this.someMethod, 2000)
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.objects {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+circle {
+  fill: rgba(42, 43, 48, 0.253);
+  transition: all 0.4s cubic-bezier(0.96, 0.04, 0.04, 0.96);
+  stroke: rgba(17, 0, 255, 0.2);
+  stroke-width: 1px;
+}
+.active {
+  fill: white;
+  stroke-width: 50px;
+}
+</style>

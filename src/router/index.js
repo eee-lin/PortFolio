@@ -1,10 +1,6 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import Home from "../views/Home.vue"
-import Works from "../views/Works.vue"
-import Blog from "../views/Blog.vue"
-import Skill from "../views/Skill.vue"
-import Contact from "../views/Contact.vue"
 
 Vue.use(VueRouter)
 
@@ -25,23 +21,26 @@ const routes = [
   },
   {
     path: "/works",
-    name: "Works",
-    component: Works,
+    name: "works",
+    component: () =>
+      import(/* webpackChunkName: "works" */ "../views/Works.vue"),
   },
   {
     path: "/blog",
-    name: "Blog",
-    component: Blog,
+    name: "blog",
+    component: () => import(/* webpackChunkName: "blog" */ "../views/Blog.vue"),
   },
   {
     path: "/skill",
-    name: "Skill",
-    component: Skill,
+    name: "skill",
+    component: () =>
+      import(/* webpackChunkName: "skill" */ "../views/Skill.vue"),
   },
   {
     path: "/contact",
-    name: "Contact",
-    component: Contact,
+    name: "contact",
+    component: () =>
+      import(/* webpackChunkName: "contact" */ "../views/Contact.vue"),
   },
 ]
 
