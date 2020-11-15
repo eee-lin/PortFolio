@@ -20,10 +20,10 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path: "/works",
-    name: "works",
+    path: "/arts",
+    name: "arts",
     component: () =>
-      import(/* webpackChunkName: "works" */ "../views/Works.vue"),
+      import(/* webpackChunkName: "works" */ "../views/Arts.vue"),
   },
   {
     path: "/blog",
@@ -41,6 +41,12 @@ const routes = [
     name: "contact",
     component: () =>
       import(/* webpackChunkName: "contact" */ "../views/Contact.vue"),
+  },
+  {
+    path: "/manage",
+    name: "manage",
+    component: () =>
+      import(/* webpackChunkName: "manage" */ "../views/Manage.vue"),
   },
 ]
 

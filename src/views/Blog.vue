@@ -10,7 +10,7 @@
           xl="3"
           style="background-color: #FFCDD2"
         >
-          <img src="../assets/export.svg" alt="美味しいの魔法" />
+          <!-- <img src="../assets/export.svg" alt="美味しいの魔法" /> -->
           column 1
         </v-col>
         <v-col

@@ -1,7 +1,18 @@
 <template>
   <div id="app">
-    <TheNavigation />
-    <router-view></router-view>
+    <v-app>
+      <TheNavigation />
+
+      <v-content>
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </v-content>
+
+      <v-footer app>
+        <!-- フッターメニュー -->
+      </v-footer>
+    </v-app>
   </div>
 </template>
 
