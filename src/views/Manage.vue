@@ -60,23 +60,25 @@
     </div> -->
     </div>
     <div class="login" v-else>
-      <v-text-field
-        v-model="mailaddress"
-        :rules="rules"
-        label="メールアドレス"
-        placeholder="abc@gmail.com"
-        outlined
-      />
-      <v-text-field
-        v-model="password"
-        :rules="rules"
-        label="パスワード"
-        placeholder="パスワード"
-        outlined
-      />
-      <v-btn color="purple" class="ma-2 white--text" @click="loginUser"
-        >ログイン</v-btn
-      >
+      <v-container py-10 px-20 class="mx-auto">
+        <v-text-field
+          v-model="mailaddress"
+          :rules="rules"
+          label="メールアドレス"
+          placeholder="abc@gmail.com"
+          outlined
+        />
+        <v-text-field
+          v-model="password"
+          :rules="rules"
+          label="パスワード"
+          placeholder="パスワード"
+          outlined
+        />
+        <v-btn color="purple" class="ma-2 white--text" @click="loginUser"
+          >ログイン</v-btn
+        >
+      </v-container>
     </div>
   </div>
 </template>

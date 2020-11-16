@@ -3,7 +3,7 @@
     <v-container py-6 px-5>
       <v-row justify="center" align-content="center">
         <v-col cols="12" xs="7" sm="10" md="10" lg="10" offset-xl="1">
-          <h1 class="pagetitle display-3 mt-8 mb-12">
+          <h1 class="pagetitle mt-8 mb-12">
             Works
           </h1>
         </v-col>
@@ -89,11 +89,49 @@
           </v-hover>
         </v-col>
       </v-row>
+      <v-col cols="11" sm="6" align="center">
+        <v-hover v-slot:default="{ hover }">
+          <v-card max-width="530">
+            <v-img src="../assets/studymonster_logo.png" max-height="255">
+              <v-expand-transition>
+                <v-card
+                  v-if="hover"
+                  height="100%"
+                  width="100%"
+                  class="d-flex transition-fast-in-fast-out v-card--reveal title white--text"
+                  href="https://study-monster.web.app"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  Learn More
+                  <v-icon small class="mx-2">
+                    open_in_new
+                  </v-icon>
+                </v-card>
+              </v-expand-transition>
+            </v-img>
+
+            <v-card-title class="text-left">
+              <h3 class="headline">
+                Study Monster
+              </h3>
+            </v-card-title>
+            <v-card-text class="text-left">
+              <p class="mb-1">
+                勉強すると、どんどんモンスターが成長する！
+              </p>
+              <p class="mb-1">
+                チームで開発しました。言語はJS(Vue.js)です。
+              </p>
+            </v-card-text>
+          </v-card>
+        </v-hover>
+      </v-col>
     </v-container>
     <v-container py-6 px-5>
       <v-row justify="center" align-content="center">
         <v-col cols="12" xs="7" sm="10" md="10" lg="10" offset-xl="1">
-          <h1 class="pagetitle display-3 mt-8 mb-8">
+          <h1 class="pagetitle mt-8 mb-8">
             Skills
           </h1>
         </v-col>
@@ -165,7 +203,7 @@
           class="mx-4 my-2"
         >
           <v-icon class="mr-2">
-            home
+            mdi-jellyfish-outline
           </v-icon>
           back home
         </v-btn>

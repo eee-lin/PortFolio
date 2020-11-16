@@ -51,6 +51,7 @@ circle {
   transition: all 0.4s cubic-bezier(0.96, 0.04, 0.04, 0.96);
   stroke: rgb(119, 0, 255);
   stroke-width: 1px;
+  opacity: 0.5;
 }
 .active {
   fill: white;

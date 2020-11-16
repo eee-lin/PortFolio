@@ -1,114 +1,86 @@
 <template>
-  <div>
-    <v-card>
-      <v-container>
-        <h2>お問い合わせ</h2>
-        <v-form
-          ref="form"
-          v-model="contactFormValidation.valid"
-          lazy-validation
+  <v-container>
+    <v-row justify="space-around">
+      <v-card width="80%">
+        <v-img
+          height="200px"
+          src="https://cdn.pixabay.com/photo/2020/07/12/07/47/bee-5396362_1280.jpg"
         >
-          <v-text-field
-            v-model="contactForm.name"
-            :rules="contactFormValidation.nameRules"
-            label="名前"
-            required
-          ></v-text-field>
-          <v-text-field
-            v-model="contactForm.email"
-            :rules="contactFormValidation.emailRules"
-            label="メールアドレス"
-            required
-          ></v-text-field>
-          <v-textarea
-            v-model="contactForm.contents"
-            :rules="contactFormValidation.contentsRules"
-            label="内容"
-            required
-          ></v-textarea>
-          <v-btn
-            :loading="contactForm.loading"
-            :disabled="!contactFormValidation.valid"
-            @click="sendMail()"
-            block
-            large
-            color="info"
-            class="mt-4 font-weight-bold"
-            >送信
-          </v-btn>
-        </v-form>
-      </v-container>
-    </v-card>
-    <v-snackbar
-      v-model="snackBar.show"
-      :color="snackBar.color"
-      bottom
-      right
-      :timeout="6000"
-      class="font-weight-bold"
-    >
-      {{ snackBar.message }}
-    </v-snackbar>
-  </div>
+          <!-- <v-app-bar flat color="rgba(0, 0, 0, 0)">
+            <v-app-bar-nav-icon color="white"></v-app-bar-nav-icon>
+
+            <v-toolbar-title class="title white--text pl-0">
+              Messages
+            </v-toolbar-title>
+
+            <v-spacer></v-spacer>
+
+            <v-btn color="white" icon>
+              <v-icon>mdi-dots-vertical</v-icon>
+            </v-btn>
+          </v-app-bar> -->
+
+          <v-card-title class="white--text mt-8">
+            <v-avatar size="56">
+              <img alt="user" src="../assets/profile.png" />
+            </v-avatar>
+            <p class="ml-3">
+              Rinzo
+            </p>
+          </v-card-title>
+        </v-img>
+
+        <v-card-text>
+          <ul>
+            <div class="font-weight-bold mb-2">
+              Contact
+            </div>
+            <v-icon large color="teal darken-2">
+              mdi-email
+            </v-icon>
+            <strong><span> arima.rinzo2020@gmail.com</span></strong>
+            <div class="message mt-2">
+              <v-avatar color="indigo" size="12">
+                <!-- <span class="white--text headline">36</span> -->
+              </v-avatar>
+              <span> 気軽にご連絡ください。</span>
+            </div>
+          </ul>
+          <!-- <v-timeline align-top dense>
+            <v-timeline-item
+              v-for="message in messages"
+              :key="message.time"
+              :color="message.color"
+              small
+            >
+              <div>
+                <div class="font-weight-normal">
+                  <strong>{{ message.from }}</strong> {{ message.time }}
+                </div>
+                <div>{{ message.message }}</div>
+              </div>
+            </v-timeline-item>
+          </v-timeline> -->
+        </v-card-text>
+      </v-card>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
-import { functions } from "@/firebase/firebase"
-
 export default {
   data: () => ({
-    contactForm: {
-      name: "",
-      contents: "",
-      email: "",
-      loading: false,
-    },
-    contactFormValidation: {
-      valid: false,
-      nameRules: [(v) => !!v || "名前は必須項目です"],
-      emailRules: [(v) => !!v || "メールアドレスは必須項目です"],
-      contentsRules: [(v) => !!v || "内容は必須項目です"],
-    },
-    snackBar: {
-      show: false,
-      color: "",
-      message: "",
-    },
+    messages: [
+      {
+        from: "気軽にご連絡ください",
+        message: ``,
+        time: "",
+        color: "deep-purple lighten-1",
+      },
+      //ずらり
+    ],
   }),
-  methods: {
-    sendMail: function() {
-      if (this.$refs.form.validate()) {
-        this.contactForm.loading = true
-        const mailer = functions.httpsCallable("sendMail")
-
-        mailer(this.contactForm)
-          .then(() => {
-            this.formReset()
-            this.showSnackBar(
-              "success",
-              "お問い合わせありがとうございます。送信完了しました"
-            )
-          })
-          .catch((err) => {
-            this.showSnackBar(
-              "error",
-              "送信に失敗しました。時間をおいて再度お試しください"
-            )
-            console.log(err)
-          })
-          .finally(() => {
-            this.contactForm.loading = false
-          })
-      }
-    },
-    showSnackBar: function(color, message) {
-      this.snackBar.message = message
-      this.snackBar.color = color
-      this.snackBar.show = true
-    },
-    formReset: function() {
-      this.$refs.form.reset()
-    },
-  },
 }
 </script>
+
+<style></style>
