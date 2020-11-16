@@ -3,7 +3,7 @@
     <v-container py-6 px-5>
       <v-row justify="center" align-content="center">
         <v-col cols="12" xs="7" sm="10" md="10" lg="10" offset-xl="1">
-          <h1 class="pagetitle display-3 font-weight-bold mt-8 mb-12">
+          <h1 class="pagetitle display-3 mt-8 mb-12">
             Works
           </h1>
         </v-col>
@@ -20,7 +20,7 @@
                     height="100%"
                     width="100%"
                     class="d-flex transition-fast-in-fast-out v-card--reveal title white--text"
-                    href="https://takuzoo3868.github.io/"
+                    href="https://portfolio-4c466.web.app"
                     target="_blank"
                     rel="noopener"
                   >
@@ -39,10 +39,10 @@
               </v-card-title>
               <v-card-text class="text-left">
                 <p class="mb-1">
-                  現在閲覧されている，ポートフォリオサイトです．
+                  現在閲覧されている，ポートフォリオサイトです。
                 </p>
                 <p class="mb-1">
-                  Vuetifyで構成し，GitHub Pagesで運用しています．
+                  Vue.jsで作成しました。UIフレームワークはVuetifyです。
                 </p>
               </v-card-text>
             </v-card>
@@ -52,14 +52,14 @@
         <v-col cols="11" sm="6" align="center">
           <v-hover v-slot:default="{ hover }">
             <v-card max-width="530">
-              <v-img src="../assets/profile.png" max-height="255">
+              <v-img src="../assets/ProfyWithTitle.jpg" max-height="255">
                 <v-expand-transition>
                   <v-card
                     v-if="hover"
                     height="100%"
                     width="100%"
                     class="d-flex transition-fast-in-fast-out v-card--reveal title white--text"
-                    href="https://github.com/takuzoo3868/penta"
+                    href="https://apps.apple.com/jp/app/profy/id1519268737"
                     target="_blank"
                     rel="noopener"
                   >
@@ -73,15 +73,16 @@
 
               <v-card-title class="text-left">
                 <h3 class="headline">
-                  Penta
+                  Profy
                 </h3>
               </v-card-title>
               <v-card-text class="text-left">
                 <p class="mb-1">
-                  PENTest + Automation tool
+                  昔、学校で流行っていた「プロフィール帳」のアプリ版です。
                 </p>
                 <p class="mb-1">
-                  対象環境の脆弱性チェック・可視化を目指しています．
+                  お互いを深く知れば、その分交流が深まります。
+                  Profyを用いて、素晴らしい人間関係を築き上げましょう。
                 </p>
               </v-card-text>
             </v-card>
@@ -92,7 +93,7 @@
     <v-container py-6 px-5>
       <v-row justify="center" align-content="center">
         <v-col cols="12" xs="7" sm="10" md="10" lg="10" offset-xl="1">
-          <h1 class="pagetitle display-3 font-weight-bold mt-8 mb-8">
+          <h1 class="pagetitle display-3 mt-8 mb-8">
             Skills
           </h1>
         </v-col>
@@ -111,7 +112,7 @@
                 slot-scope="{ hover }"
                 class="text-xs-center ma-4"
                 :class="`elevation-${hover ? 12 : 4}`"
-                color="teal darken-2"
+                color="indigo"
               >
                 <v-card-title>
                   <div class="mx-auto">
@@ -156,7 +157,13 @@
       </v-row>
 
       <div class="text-center pb-6 px-5">
-        <v-btn x-large color="grey darken-3" rounded to="/" class="mx-4 my-2">
+        <v-btn
+          x-large
+          color="purple lighten-2"
+          rounded
+          to="/"
+          class="mx-4 my-2"
+        >
           <v-icon class="mr-2">
             home
           </v-icon>
@@ -173,23 +180,77 @@ export default {
     return {
       skills: [
         {
-          title: "Python",
+          title: "Swift",
           value: 0,
-          absoluteValue: 80,
+          absoluteValue: 60,
           color: "white",
           icon: "fab fa-python",
           show: false,
-          duration: "5 years",
+          duration: "2 years",
+        },
+        {
+          title: "Python",
+          value: 0,
+          absoluteValue: 50,
+          color: "white",
+          icon: "fab fa-python",
+          show: false,
+          duration: "2 years",
         },
         // 略
         {
-          title: "Go To BED",
+          title: "Vue.js",
           value: 0,
-          absoluteValue: 100,
+          absoluteValue: 40,
           color: "white",
-          icon: "hotel",
+          icon: "",
           show: false,
-          duration: "25 years / very good",
+          duration: "3 months",
+        },
+        {
+          title: "JavaScript",
+          value: 0,
+          absoluteValue: 20,
+          color: "white",
+          icon: "",
+          show: false,
+          duration: "3 months",
+        },
+        {
+          title: "Blender",
+          value: 0,
+          absoluteValue: 30,
+          color: "white",
+          icon: "",
+          show: false,
+          duration: "2 months",
+        },
+        {
+          title: "HTML",
+          value: 0,
+          absoluteValue: 80,
+          color: "white",
+          icon: "",
+          show: false,
+          duration: "6 months",
+        },
+        {
+          title: "CSS",
+          value: 0,
+          absoluteValue: 50,
+          color: "white",
+          icon: "",
+          show: false,
+          duration: "6 months",
+        },
+        {
+          title: "C言語",
+          value: 0,
+          absoluteValue: 50,
+          color: "white",
+          icon: "",
+          show: false,
+          duration: "1 year",
         },
       ],
       interval: {},

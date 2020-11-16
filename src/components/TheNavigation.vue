@@ -7,6 +7,7 @@
     <router-link to="/skill">Skill</router-link>
     <router-link to="/contact">Contact</router-link>
     <router-link to="/manage">Manage</router-link>
+    <!-- <router-link to="/signup">SignUp</router-link> -->
   </div>
 </template>
 
