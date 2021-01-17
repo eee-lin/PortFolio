@@ -1,25 +1,16 @@
 <template>
-  <img
-    class="circle-root"
-    src="@/assets/export2.svg"
-    alt="circle"
+  <div
+    class="container"
     :style="{
       transform: `translate(${x}px, ${y}px) scale(${scaleX}, ${scaleY})`,
     }"
-  />
+  >
+    <div class="pink-radius"></div>
+  </div>
 </template>
-
-<style lang="scss" scoped>
-.circle-root {
-  position: absolute; //絶対配置
-  left: 0;
-  top: 0;
-}
-</style>
 
 <script>
 export default {
-  name: "circle1",
   props: {
     x: { type: Number, default: 100 },
     y: { type: Number, default: 100 },
@@ -28,3 +19,17 @@ export default {
   },
 }
 </script>
+
+<style>
+.pink-radius {
+  width: 100px;
+  height: 100px;
+  line-height: 200px;
+  background-color: rgb(250, 103, 194);
+  border-radius: 50%;
+  opacity: 0.2;
+  /* border-radius: 30% 70% 35% 65% / 50% 50% 50% 50%; */
+  color: #fff;
+  text-align: center;
+}
+</style>

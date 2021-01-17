@@ -1,85 +1,68 @@
 <template>
-  <div>
-    <v-container>
-      <v-row class="grey lighten-3" style="height: 600px;">
-        <v-col
-          cols="12"
-          sm="8"
-          md="6"
-          lg="4"
-          xl="3"
-          style="background-color: #FFCDD2"
+  <div class="blog">
+    <v-card class="mx-auto" max-width="900">
+      <a
+        href="https://note.com/yilycle"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <v-img src="../assets/サファイヤの森.jpg" max-height="500px"></v-img>
+      </a>
+      <div class="note">
+        <v-icon color="teal lighten-2" max-width="10vw">
+          mdi-note
+        </v-icon>
+        <v-card-subtitle>
+          noteでブログを書いています。
+        </v-card-subtitle>
+      </div>
+
+      <v-card-actions>
+        <v-btn
+          href="https://note.com/yilycle"
+          target="_blank"
+          rel="noopener noreferrer"
+          color="orange lighten-2"
+          text
         >
-          <img src="../assets/export.svg" alt="美味しいの魔法" />
-          column 1
-        </v-col>
-        <v-col
-          cols="12"
-          sm="8"
-          md="6"
-          lg="4"
-          xl="3"
-          style="background-color: #F8BBD0"
-        >
-          column 2
-        </v-col>
-        <v-col
-          cols="12"
-          sm="8"
-          md="6"
-          lg="4"
-          xl="3"
-          style="background-color: #E1BEE7"
-        >
-          column 3
-        </v-col>
-        <v-col
-          cols="12"
-          sm="8"
-          md="6"
-          lg="4"
-          xl="3"
-          style="background-color: #D1C4E9"
-        >
-          column 4
-        </v-col>
-        <v-col
-          cols="12"
-          sm="8"
-          md="6"
-          lg="4"
-          xl="3"
-          style="background-color: #C5CAE9"
-        >
-          column 5
-        </v-col>
-        <v-col
-          cols="12"
-          sm="8"
-          md="6"
-          lg="4"
-          xl="3"
-          style="background-color: #BBDEFB"
-        >
-          column 6
-        </v-col>
-        <v-col
-          cols="12"
-          sm="8"
-          md="6"
-          lg="4"
-          xl="3"
-          style="background-color: #B3E5FC"
-        >
-          column 7
-        </v-col>
-      </v-row>
-    </v-container>
+          Explore
+        </v-btn>
+
+        <v-spacer></v-spacer>
+
+        <v-btn icon @click="show = !show">
+          <v-icon>{{ show ? "mdi-chevron-up" : "mdi-chevron-down" }}</v-icon>
+        </v-btn>
+      </v-card-actions>
+
+      <v-expand-transition>
+        <div v-show="show">
+          <v-divider></v-divider>
+
+          <v-card-text>
+            日々が喧騒。しみじみとした無常観。そんな世界の中で生きている。環境が変わるなら自分も変わらなくては。
+          </v-card-text>
+        </div>
+      </v-expand-transition>
+    </v-card>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    show: false,
+  }),
+}
 </script>
 
-<style></style>
+<style>
+.blog {
+  margin-top: 30px;
+}
+
+.note {
+  display: flex;
+  justify-content: center;
+}
+</style>

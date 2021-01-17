@@ -8,7 +8,7 @@
     }"
   /> -->
   <!-- <div v-bind:style="{ width: activeColor, fontSize: fontSize + 'px' }"> -->
-  <div v-bind:style="styleObject">
+  <div>
     <!-- <span id="box1"></span> -->
     <img
       class="circle-root"

@@ -1,7 +1,17 @@
 <template>
   <div id="app">
-    <TheNavigation />
-    <router-view></router-view>
+    <v-app>
+      <TheNavigation />
+      <v-content>
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </v-content>
+
+      <v-footer app>
+        <!-- フッターメニュー -->
+      </v-footer>
+    </v-app>
   </div>
 </template>
 
@@ -21,5 +31,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+a {
+  text-decoration: none;
 }
 </style>

@@ -4,7 +4,7 @@ import router from "./router"
 import store from "./store"
 import VueKinesis from "vue-kinesis"
 import vuetify from "./plugins/vuetify"
-import "./firebase.js"
+import "firebase/firebase"
 
 Vue.use(VueKinesis)
 
