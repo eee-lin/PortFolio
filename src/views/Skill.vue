@@ -150,7 +150,7 @@
                 slot-scope="{ hover }"
                 class="text-xs-center ma-4"
                 :class="`elevation-${hover ? 12 : 4}`"
-                color="indigo"
+                color="indigo lighten-1"
               >
                 <v-card-title>
                   <div class="mx-auto">
@@ -284,7 +284,34 @@ export default {
         {
           title: "C言語",
           value: 0,
-          absoluteValue: 50,
+          absoluteValue: 30,
+          color: "white",
+          icon: "",
+          show: false,
+          duration: "1 year",
+        },
+        {
+          title: "Photoshop",
+          value: 0,
+          absoluteValue: 30,
+          color: "white",
+          icon: "",
+          show: false,
+          duration: "1 year",
+        },
+        {
+          title: "Illustrator",
+          value: 0,
+          absoluteValue: 20,
+          color: "white",
+          icon: "",
+          show: false,
+          duration: "1 year",
+        },
+        {
+          title: "Figma",
+          value: 0,
+          absoluteValue: 30,
           color: "white",
           icon: "",
           show: false,

@@ -1,6 +1,6 @@
 <template>
   <div class="blog">
-    <v-card class="mx-auto" max-width="900">
+    <v-card class="mx-auto mb-5" max-width="900">
       <a
         href="https://note.com/yilycle"
         target="_blank"
@@ -44,6 +44,20 @@
           </v-card-text>
         </div>
       </v-expand-transition>
+    </v-card>
+    <v-card class="mx-auto" max-width="900">
+      <a href="http://rintoharu.com/" target="_blank" rel="noopener noreferrer">
+        <v-img src="../assets/top_image2.png" max-height="500px"></v-img>
+      </a>
+      <div class="note">
+        <v-icon color="deep-orange lighten-2" max-width="10vw">
+          mdi-flower-poppy
+        </v-icon>
+        <v-card-subtitle>
+          2021年3月から"Rintoharu"をはじめました。
+        </v-card-subtitle>
+      </div>
+      <v-spacer></v-spacer>
     </v-card>
   </div>
 </template>
